@@ -12,15 +12,12 @@
         var options = $.extend(defaults, options);
 
         var resizeElements = function() {
-            self.each(function(i) {
+            self.each(function() {
                 var pw = $(this).parent().width();
                 var ph = $(this).parent().height();
 
-                var w = $(this).width();
-                var h = $(this).height();
-
                 if (!options.scale) {
-                    var ratio = w / h;
+                    var ratio = $(this).data('aspectRatio');
                     if (ph < pw) {
                         $(this).height(ph).width(ph * ratio);
                     } else {
@@ -29,10 +26,13 @@
                     return;
                 }
 
-                var sx = w / pw;
-                var sy = h / ph;
+                var sx = $(this).width() / pw;
+                var sy = $(this).height() / ph;
 
                 var transform = 'scale(' + (1/Math.max(sx, sy)) + ')';
+
+                if ($(this).data('transform') == transform) return;
+                $(this).data('transform', transform);
 
                 $(this).css('transform', transform);
                 $(this).css('-ms-transform', transform);
@@ -43,6 +43,12 @@
         };
 
         $(window).resize(function(){ resizeElements(); });
+
+        if (!options.scale) {
+            self.each(function() {
+                $(this).data('aspectRatio', ($(this).width() / $(this).height()));
+            });
+        }
 
         return resizeElements();
     };
