@@ -5,6 +5,10 @@ v0.0.1 by Evan Coury
 
 jqAspectRatio solves a simple problem: it allows an element to automaticall resize within its parent element based on the original aspect ratio. It optionally supports the CSS3 scale transformation.
 
+## Demo
+
+[Click here](http://evandotpro.github.com/jqAspectRatio/) to see a demo of how you might use this plugin to set up a 4:3 slideshow which scales properly.
+
 ## Usage
 
 ### Basic example
