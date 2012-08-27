@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.aspectratio.js"></script>
+    <style type="text/css">
+    html, body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    #aspectratio {
+        margin: 0px auto;
+        width: 800px;
+        height: 600px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -400px;
+        margin-top: -300px;
+        background-color: #1C1C1C;
+    }
+
+    #aspectratio h1 {
+        text-align: center;
+        margin: 0px;
+        color: #FFF;
+    }
+    </style>
+</head>
+<body>
+    <div id="aspectratio"><h1>I will scale!</h1></div>
+    <script>
+        $('#aspectratio').aspectRatio({scale: true});
+    </script>
+</body>
+</html>
