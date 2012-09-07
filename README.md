@@ -3,7 +3,7 @@ v0.0.1 by Evan Coury
 
 ## Introduction
 
-jqAspectRatio solves a simple problem: it allows an element to automaticall resize within its parent element based on the original aspect ratio. It optionally supports the CSS3 scale transformation.
+jqAspectRatio solves a simple problem: it allows an element to automatically resize within its parent element based on the original aspect ratio. It optionally supports the CSS3 scale transformation.
 
 ## Demo
 
@@ -21,7 +21,7 @@ $('.someclass').aspectRatio();
 
 #### Example with CSS3 scaling
 
-This example will not only resize the element(s) to retain the original aspect ratio, but it will also scale the content with the element(s) to match.
+This example will not only resize the element(s) to retain the original aspect ratio, but it will also scale the content within the element(s) to match.
 
 ```javascript
 $('.someclass').aspectRatio({scale: true});
